@@ -1,29 +1,32 @@
-function currentLine(line) {
-  if (!line.length) {
+function currentLine(queue) {
+  if (!queue.length) {
     return "The line is currently empty."
   }
-
-  var numbersAndNames = []
-
-  for (let i = 0, l = line.length; i < l; i++) {
-
-    numbersAndNames.push(`${i + 1}. ${line[i]}`)
+//.length it returns the number of elemnets held in an array,
+  var katzDeliLine = []
+  for (let i = 0, l = queue.length; i < l; i++) {
+    katzDeliLine.push(`${i + 1}. ${queue[i]}`)
   }
 
-  return `The line is currently: ${numbersAndNames.join(', ')}`
+  return `The line is currently: ${katzDeliLine.join(', ')}`
 };
+//.join acts like a separator. To separate the customers?!
 
-function nowServing(line) {
-  if (!line.length) {
+function nowServing(queue) {
+  if (!queue.length) {
     return "There is nobody waiting to be served!"
   }
 // ! is single bang, making a statement false, even if true
 // !! if a statement is true, stays true with the double bang.
-  return `Currently serving ${line.shift()}.`
+
+  return `Currently serving ${queue.shift()}.`
   };
 
-function takeANumber(line, name) {
-  line.push(name)
+function takeANumber(queue, ) {
+  queue.push("")
 
-  return `Welcome, ${name}. You are number ${line.length} in line.`
+  //return `Welcome, ${name}. You are number ${queue.length} in line.`
+  return `You are number ${queue.length} `
+
+
 };
